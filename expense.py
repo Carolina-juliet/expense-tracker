@@ -1,0 +1,46 @@
+a="EXPENSE TRACKER "
+print(a)
+list1=[]
+def add():
+    cat=input("Enter category: ")
+    amnt=int(input("Enter amount "))
+    print("you have spent", amnt, "on",cat)
+    
+    view={"category":cat, "Amount": amnt}
+    list1.append(view)
+    return view
+def vexp(a):
+    for i in range(len(a)):
+        print(a[i])
+    
+    
+def tot(b):
+    total=0
+    for i in range(len(b)):
+        total+=b[i].get("Amount")
+    return total
+view={}
+while(True):
+    print("1.Add expense ")
+    print("2.view expense ")
+    print("3.Total")
+    print("4.Exit ")
+    choice=int(input("Enter your choice: "))
+    match choice:
+        case 1:
+            view.update(add())
+        case 2:
+            vexp(list1)
+        case 3:
+            total=tot(list1)
+            print("Total=",total)
+        case 4:
+            break
+        case _:
+            print("Error")
+
+
+
+
+
+    
