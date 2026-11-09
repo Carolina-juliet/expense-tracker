@@ -13,7 +13,12 @@ def vexp(a):
     for i in range(len(a)):
         print(a[i])
     
-    
+def subt(a,b):
+    tot=0
+    for i in range(len(b)):
+        if b[i].get("category") == a:
+            tot+=b[i].get("Amount")
+    return tot
 def tot(b):
     total=0
     for i in range(len(b)):
@@ -24,7 +29,8 @@ while(True):
     print("1.Add expense ")
     print("2.view expense ")
     print("3.Total")
-    print("4.Exit ")
+    print("4.Subtotal")
+    print("5.Exit ")
     choice=int(input("Enter your choice: "))
     match choice:
         case 1:
@@ -35,9 +41,15 @@ while(True):
             total=tot(list1)
             print("Total=",total)
         case 4:
+            sub=input("Enter the category: ")
+            total=subt(sub,list1)
+            print("Total expense on ", sub,total)
+        case 5:
             break
         case _:
             print("Error")
+
+
 
 
 
