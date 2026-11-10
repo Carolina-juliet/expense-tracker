@@ -24,13 +24,19 @@ def tot(b):
     for i in range(len(b)):
         total+=b[i].get("Amount")
     return total
+def delete(del2, a):
+    for i in range(len(a)):
+        if a[i].get("category")==del2:
+            a.pop(i)
+
 view={}
 while(True):
     print("1.Add expense ")
     print("2.view expense ")
     print("3.Total")
     print("4.Subtotal")
-    print("5.Exit ")
+    print("5. Delete expense")
+    print("6.Exit ")
     choice=int(input("Enter your choice: "))
     match choice:
         case 1:
@@ -45,6 +51,9 @@ while(True):
             total=subt(sub,list1)
             print("Total expense on ", sub,total)
         case 5:
+            del1=input("Enter the category to be deleted")
+            delete(del1, list1)
+        case 6:
             break
         case _:
             print("Error")
